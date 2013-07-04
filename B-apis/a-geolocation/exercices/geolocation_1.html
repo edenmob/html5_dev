@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+  <script src="../../../libs/jquery-1.10.1.min.js"></script>
+  <script src="../../../libs/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+  <button id="geobutton">Afficher la position courante</button> &nbsp;
+  <button id="geobutton2">Suivre la position</button>
+  <button id="geobutton3">Arrêter le suivi</button>
+  <div id="mapDiv" style="height:400px;width:400px;">
+  </div>
+  <!-- Placé avant la fin du body (performances) -->
+  <script src="geolocation.js"></script>
+  <!-- google maps API -->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</body>
+</html>

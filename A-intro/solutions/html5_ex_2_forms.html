@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de mon site en HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <hgroup>
+      <h1><span>Mon beau formulaire HTML5 <img src="../../a-common/img/HTML5_Badge_64.png" alt="HTML5 Logo" /></h1>
+      <h2>Fait avec passion !</h2>
+    </hgroup>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="html5_ex_3_forms.html">Formulaire</a></li>
+      </ul>
+    </nav>
+    <p id="issue"><time datetime="2013-03-04" pubdate>4 Mars 2013</time></p>
+  </header>
+  <form id="register" method="post">
+    <hgroup>
+      <h1>Formulaire d'enregistrement</h1>
+      <h2>Je souhaite recevoir des informations ...</h2>
+    </hgroup>
+    <ul>
+      <li>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" required>
+      </li>
+      <li>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </li>
+      <li> 
+        <label for="password">Mon mot de passe (au moins 6 charactères, sans espaces):</label>
+        <input type="password" id="password" name="password" required pattern="\S{6,}">
+      </li>
+      <li>
+        <label for="url">Mon site web est:</label>
+        <input type="url" id="url" name="url" placeholder="http://monsite.com">
+      </li>
+      <li>
+        <label for="rating">Mon niveau en HTML:</label>
+        <input min="1" max="10" id="rating" name="rating" type="range">
+      </li>
+      <li>
+        <label for="startdate">D&eacute;marrage de mon abonnement le:</label>
+        <input type="date" id="startdate" name="startdate" min="2013-03-04" max="2014-01-01" required>
+      </li>
+      <li>
+        <label for="quantity">J'aimerai recevoir <input type="number" name="quantity" id="quantity" min="1" max="10" value="1"> copie(s) de <cite>VotreProduit</cite>.</label>
+      </li>
+      <li>
+        <label for="sub">Je souhaite souscrire &agrave; votre newsletter <cite>LaNewsletter</cite></label>
+        <input id="sub" name="sub" type="checkbox">
+      </li>
+
+    </ul>
+    <input type="submit" id="registersub" value="Valider le formulaire"/>
+  </form>
+  <footer>
+    <small>html5 </small>
+    <p><a href="http://www.w3.org"><img src="../../a-common/img/HTML5_Badge_64.png" alt="HTML5" ></a></p>
+  </footer>
+</body>
+</html>

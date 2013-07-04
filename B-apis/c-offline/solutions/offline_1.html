@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+  <style media="screen" type="text/css">
+
+
+  #status {
+    padding: 5px;
+    color: #fff;
+    background: #ccc;
+  }
+
+  #status.fail {
+    background: #c00;
+  }
+
+  #status.success {
+    background: #0c0;
+  }
+
+  #status.offline {
+    background: #c00;
+  }
+
+  #status.online {
+    background: #0c0;
+  }
+  </style>
+  <script src="../../../libs/jquery-1.10.1.min.js"></script>
+  <script src="../../../libs/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+
+  <article id="ac3">
+    <p>Statut actuel du réseau : <span id="status">vérification ...</span></p>
+    <p>Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum.</p>
+    <p>Nam vestibulum, arcu sodales feugiat.</p>
+  </div>
+</article>
+
+
+<!-- Placé avant la fin du body (performances) -->
+
+<script src="offline_1.js"></script>
+</body>
+</html>

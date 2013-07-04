@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de mon site en HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <script src="../../../libs/jquery-1.10.1.min.js"></script>
+  <script src="../../../libs/modernizr-2.6.2.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Page C</h1>
+    <nav>
+      <ul>
+        <li><a href="ex_3_souvenirs_A.html">Page A</a></li>
+        <li><a href="ex_3_souvenirs_B.html">Page B</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form id="register" method="post">
+    <h1>Vidage du cache</h1>
+    <ul>
+      <li>
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="name" required>
+      </li>
+      <li>
+        <label for="firstname">Prenom:</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </li>
+      <li>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </li>
+    </ul>
+    <input type="submit" id="registersub" value="Valider le formulaire"/>
+  </form>
+  <br/>
+  <footer>
+    <small>HTML5, c'est super </small>
+  </footer>
+
+  <!-- Placé avant la fin du body (performances) -->
+  <script>
+  if (Modernizr.localstorage) {
+    // Préférer cette notation
+    localStorage.removeItem('name');
+    localStorage.removeItem('firstname');
+    localStorage.removeItem('sesouvenirdemoi');
+    delete localStorage['email'];
+    // Plus simple
+    localStorage.clear();
+  }
+
+  </script>
+</body>
+</html>

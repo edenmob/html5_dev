@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>WebWorker 1 Test</title>
+</head>
+
+<body>
+	<h2>WebWorker 1 Test</h2> 
+	<div id="output"></div>  
+	<script language="javascript" type="text/javascript">
+	var worker = new Worker('webworkers_1.js');
+
+	/*worker.addEventListener('message', function(e) {
+		console.log('Worker said: ', e.data);
+	}, false);*/
+
+	// Peut s'écrire également comme ceci
+	worker.onmessage = function (e) {
+		console.log('Worker said: ', e.data);
+	};
+
+	// Send data to our worker.
+	worker.postMessage('Hello World'); 
+</script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+CACHE MANIFEST
+#v0.2
+
+CACHE:
+index.html
+style.css
+script.js
+images/html5_offline.png
+
+FALLBACK:
+media/	images/html5_offline.png
+/ offline.html
+
+NETWORK:
+*

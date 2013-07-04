@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+  <style media="screen" type="text/css">
+  .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+  </style>
+
+</head>
+<body>
+
+  <input type="file" id="files" name="files[]" multiple />
+  <output id="list"></output>
+
+  <script>
+
+    // Dispo des APIs ?
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      // TODO : Que faut-il faire ici ?
+    } else {
+      alert('File APIs non supportées totalement');
+    }
+
+    function handleFileSelect(evt) {
+      // Objet FileList
+      var files = evt.target.files; 
+
+      // Boucle sur les FileList pour générer des miniatures d'image
+      for (var i = 0, f; f = files[i]; i++) {
+
+        // On ne traite que les images
+        if (!f.type.match('image.*')) {
+          continue;
+        }
+
+        // TODO : Il faut un FileReader ...
+        var reader = null;
+        
+        reader.onloadend = function(e) {
+          // DONE == 2
+          if (e.target.readyState == FileReader.DONE) { 
+            // Rendu de la miniature
+            var span = document.createElement('span');
+            span.innerHTML = ['<img class="thumb" src="', e.target.result,
+            '"/>'].join('');
+            document.getElementById('list').insertBefore(span, null);
+          }
+        }
+
+        // TODO : Lecture de l'image en tant que Data URL
+        
+      }
+    }
+
+
+    </script>
+
+  </body>
+  </html>

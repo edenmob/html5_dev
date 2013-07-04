@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  /* Mettre vos css ici */
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Ma liste de l&egrave;gumes :</h1>
+    <ul id="legumes">
+      <li id="car" data-price="1.30">Carrotes</li>
+      <li id="pdt"  data-price="1.00">Pommes de terre</li>
+      <li id="aub" data-price="2.50">Aubergines</li>
+      <li id="cour" data-price="1.20">Courgettes</li>
+    </ul>
+  </div>
+
+  <script>
+  /* Mon javascript ici */
+  //console.log('document = '+document);
+
+    /* 
+    remarques concernant les utilisations à éviter ou les précautions à prendre: 
+    A - non prévues pour partager des infos entre application (usage interne uniquement). Voir RDF, micro-data ...
+    B - non prévues pour transmettre des informations de style (css est la pour ça)
+    D - utiliser des namespaces pour éviter les collisions
+    */
+
+
+    var car = document.getElementById('car');
+    var pdt = document.getElementById('pdt');
+    var aub = document.getElementById('aub');
+    var cour = document.getElementById('cour');
+
+    if (car.dataset === undefined) {
+      console.log('dataset non supporté');
+    } else {
+      console.log('dataset supporté');
+      show();
+    }
+
+    function show(event){
+      // TODO : Logguer les valeurs
+  }
+
+  </script>
+</body>
+</html>

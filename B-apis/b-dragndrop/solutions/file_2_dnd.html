@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+  <style media="screen" type="text/css">
+  #drop_zone {
+    border: 2px dashed #bbb;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold 'Vollkorn';
+    color: #bbb;
+  }
+  </style>
+
+</head>
+<body>
+
+  <div class="example">
+    <div id="drop_zone">Drop files here</div>
+    <output id="list"></output>
+  </div>
+
+  <script>
+
+    // Dispo des APIs ?
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      var dropZone = document.getElementById('drop_zone');
+      dropZone.addEventListener('dragover', handleDragOver, false);
+      dropZone.addEventListener('drop', handleFileSelect, false);
+    } else {
+      alert('File APIs non supportées totalement');
+    }
+
+    function handleFileSelect(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      // Objet FileList
+      var files = evt.dataTransfer.files; 
+      evt.dataTransfer.effectAllowed = 'link';
+
+      // files est une FileList d'objet File.
+      // On en liste quelques propriétés
+      var output = [];
+      for (var i = 0, f; f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+          f.size, ' bytes, last modified: ',
+          f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+          '</li>');
+      }
+      document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    }
+
+    function handleDragOver(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      // Utilisation de l'effet copy
+      evt.dataTransfer.dropEffect = 'link'; 
+    }
+
+
+    </script>
+
+  </body>
+  </html>

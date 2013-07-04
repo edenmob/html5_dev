@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+
+</head>
+<body>
+
+  <input type="file" id="files" name="files[]" multiple />
+  <output id="list"></output>
+
+  <script>
+
+    // Dispo des APIs ?
+    if (window.File && window.FileReader && window.FileList && window.Blob) {      
+      // TODO : Affecter handleFileSelect comme callback de l'évènement change de #files
+      document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    } else {
+      alert('File APIs non supportées totalement');
+    }
+
+    function handleFileSelect(evt) {
+      // TODO : Récupérer la liste de fichier (FileList) depuis l'évènement evt ?
+      var files = null;
+
+      // files est une FileList d'objet File.
+      // On en liste quelques propriétés
+      var output = [];
+      for (var i = 0, f; f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+          f.size, ' bytes, last modified: ',
+          f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+          '</li>');
+      }
+      document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    }
+
+
+    </script>
+
+  </body>
+  </html>

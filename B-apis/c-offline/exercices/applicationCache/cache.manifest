@@ -1,0 +1,18 @@
+CACHE MANIFEST
+#v0.2
+
+CACHE:
+# Mettre en cache la page index.html, son style css et son script js
+# Mettre en cache images/html5_offline.png pour la gestion du fallback
+
+
+FALLBACK:
+# Remplacer tous les fichiers du repertoires media par images/html5_offline.png
+# Renvoyer tous les appels non en cache vers offline.html
+
+NETWORK:
+*
+
+# Pensez à ajouter un .htaccess
+# Vérifier que les fichiers sont chargés depuis le cache
+# Mettez à jour un fichier et tester. Que constatez-vous ? Comment résoudre cela ?

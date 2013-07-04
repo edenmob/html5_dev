@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre</title>
+  <meta name="description" content="Mon super site">
+  <meta name="author" content="Moi">
+  <script src="../../../libs/jquery-1.10.1.min.js"></script>
+  <script src="../../../libs/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+
+    <article id="ac3">
+      <hgroup>
+        <h1>Déplacer (Drag and drop) les petits badges HTML5 sur le grand ...</h1>
+        <h2 id="displayText">Ce texte va changer ...</h2>
+      </hgroup>
+            
+      <img src="../../../images/HTML5_Badge_256.png" id="bigHtml5" alt="Big HTML5">
+      <div class="content">
+        <p id="badgesContainer">
+      <img src="../../../images/HTML5_Badge_64.png" width="30" alt="HTML5" id="A" draggable="true">
+      <img src="../../../images/HTML5_Badge_64.png" width="30" alt="HTML5" id="B" draggable="true">
+      <img src="../../../images/HTML5_Badge_64.png" width="30" alt="HTML5" id="C" draggable="true">  
+        </p>
+        <p>Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum.</p>
+        <p>Nam vestibulum, arcu sodales feugiat.</p>
+      </div>
+    </article>
+
+
+  <!-- Placé avant la fin du body (performances) -->
+  <script src="dragNdrop.js"></script>
+</body>
+</html>

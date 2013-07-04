@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  <style>
+  /* Mettre vos css ici */
+  </style>
+</head>
+<body>
+  <!-- Documentation MDN ici : https://developer.mozilla.org/en-US/docs/DOM/Storage -->
+  <form>
+    <label for="nom">Nom:</label>
+    <input id="nom" name="name" type="text" required>
+  </form><br/><br/>
+
+  <button onclick="save();">Sauvegarde des données</button>
+
+  <a href="html5_ex_4_sessionStorage_B.html">Page suivante</a>
+
+  <script>
+  /* Mon javascript ici */
+  //console.log('document = '+document);
+  function save(){
+    console.log('sauvegarde');
+    var name = document.getElementById("nom");
+    /* Utilisation de l'API sessionStorage pour stocker nom */
+    return true;
+  }
+  </script>
+</body>
+</html>

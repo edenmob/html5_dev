@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Le titre de mon site en HTML5</title>
+  <meta name="description" content="Mon super site HTML5"/>
+  <!-- Document inspiré de html5doctor.com -->
+  <meta name="author" content="Moi"/>
+  <style>
+  /* Sections principales (enfants de body) : bordure rouge */
+  body > section:before {content:'Section principale';}
+  body > section {border: 1px solid red; margin:20px; padding: 10px;}
+  /* Article principaux (enfants de body) : bordure orange */
+  body > article:before {content:'Article principal';}
+  body > article {border: 1px solid orange; margin:20px; padding: 10px; }
+  /* Sections non principales : bordure bleue en pointillé; */
+  body > article section, body > section section {border: 1px dashed blue; margin: 5px; padding: 5px;}
+  /* Articles non principaux : Fond gris */
+  body > article article, body > section article {background-color: #ccc; margin: 5px; padding: 5px;}}
+
+  </style>
+</head>
+<body>
+
+  <!-- Petite note sur la différence entre section et article -->
+  <!--
+    A. Si le contenu se suffit à lui même et peut être inclué dans seul dans un flux Rss, par exemple : préférer article
+    B. Si le contenu à inclure est lié sémantiquement, utiliser section
+    C. S'il n'y a pas de lien sémantique au niveau du contenu, c'est un simple div (mise en forme uniquement)
+  -->
+
+  <!-- Premier exemple : Un article que l'on pourrait trouvé sur un blog -->
+  <!-- La date de publication nous pousse à mettre un header, le footer peut contenir des informations liés ... -->
+
+  <!-- ******************************************************** -->
+  <!-- Document outliner : http://gsnedders.html5.org/outliner/ -->
+  <!-- Validation du document : http://html5.validator.nu/      -->
+  <!-- HTML5 Lint : http://lint.brihten.com/html/               -->
+  <!-- ******************************************************** -->
+  <article>
+    <header>
+      <h1>Apple</h1>
+      <p>Published: <time datetime="2009-10-09">2013-03-04</time></p>
+    </header>
+    <p>The <b>apple</b> is the pomaceous fruit of the apple tree...</p>
+    ...
+    <footer>
+      <p><small>Creative Commons Attribution-ShareAlike License</small></p>
+    </footer>
+  </article>
+
+  <!-- Second exemple : Un article avec des commentaires embarqués en tant qu'articles dans une section -->
+  <article>
+    <header>
+      <h1>Apple</h1>
+      <p>Published: <time  datetime="2009-10-09">9th October, 2009</time></p>
+    </header>
+    <p>The <b>apple</b> is the pomaceous fruit of the apple tree...</p>
+    ...
+
+    <section>
+      <h2>Comments</h2>
+      <article>
+        <header>
+          <h3>Posted by: Apple Lover</h3>
+          <p><time  datetime="2009-10-10T19:10-08:00">~1 hour ago</time></p>
+        </header>
+        <p>I love apples, my favourite kind are Granny Smiths</p>
+      </article>
+
+      <article>
+        <header>
+          <h3>Posted by: Oranges are king</h3>
+          <p><time  datetime="2009-10-10T19:15-08:00">~1 hour ago</time></p>
+        </header>
+        <p>Urgh, apples!? you should write about ORANGES instead!!1!</p>
+      </article>
+    </section>
+  </article>
+
+  <!-- Troisième exemple : Un article avec section -->
+  <article>
+    <h1>Apple varieties</h1>
+    <p>The apple is the pomaceous fruit of the apple tree...</p>
+
+    <section>
+      <h2>Red Delicious</h2>
+      <p>These bright red apples are the most common found in many supermarkets...</p>
+    </section>
+
+    <section>
+      <h2>Granny Smith</h2>
+      <p>These juicy, green apples make a great filling for apple pies...</p>
+    </section>    
+  </article>
+
+  <!-- Une section contenant des articles -->
+  <section>
+    <h1>Articles on: Fruit</h1>
+
+    <article>
+      <h2>Apple</h2>
+      <p>The apple is the pomaceous fruit of the apple tree...</p>
+    </article>
+
+    <article>
+      <h2>Orange</h2>
+      <p>The orange is a hybrid of ancient cultivated origin, possibly between pomelo and tangerine...</p>
+    </article>
+
+    <article>
+      <h2>Banana</h2>
+      <p>Bananas come in a variety of sizes and colors when ripe, including yellow, purple, and red...</p>
+    </article>
+  </section>
+
+</body>
+</html>

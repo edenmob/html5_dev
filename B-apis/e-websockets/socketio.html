@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Socket.io !</title>
+	<script src="socket.io.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Socket.io test ...</h1>
+	</header>
+	
+	<script>
+	var socket = io.connect('http://localhost:3000');
+	socket.on('news', function (data) {
+		console.log(data);
+		socket.emit('my other event', { my: 'data' });
+	});
+	</script>
+</body>
+</html>

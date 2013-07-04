@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Le titre de ma page HTML5</title>
+  <meta name="description" content="Mon super site HTML5">
+  <meta name="author" content="Moi">
+  
+  <style>
+  /* Mettre vos css ici */
+  /* On définit le fond du body */
+  body{
+    width:600px;
+    margin: 200px auto ;
+    background: #ccc;
+  }
+
+  #boite {
+    /* Boite */
+    width: 500px;
+    height: 500px;
+
+    /* Coins arrondis avec border-radius de 3px */
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    /* Bordures avec border de 2 px*/
+    border: 2px solid white;
+
+    /* http://www.colorzilla.com/gradient-editor/ */
+    /* Dégradé pour l'arrière plan, couleur pleine en cas de navigateur non compatible */
+    background: #a90329; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* IE10+ */
+    background: linear-gradient(45deg,  #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  }
+
+  </style>
+</head>
+<body>
+
+  <div id="boite">
+
+  </div>
+
+  <script>
+  /* Mon javascript ici */
+  //console.log('document = '+document);
+  </script>
+</body>
+</html>
