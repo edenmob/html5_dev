@@ -2,6 +2,9 @@ $('document').ready(function() {
 
   // 1. Binder les évènements principaux de l'API
   // et les logguer dans la console
+  $("#badgesContainer img").on('dragstart',function(event){
+    console.log(event);
+  });
 
   // 1. Binder l'évènement dragstart (sur les objets draggable)
   // Autrement dit toutes les images de #badgesContainer

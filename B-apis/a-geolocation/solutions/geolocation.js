@@ -1,3 +1,6 @@
+// Tour Eiffel
+// Lat : 48.858, Long : 2.294599999999946
+// http://www.coordonnees-gps.fr/
 $('document').ready(function(){
   $('#geobutton').click(determineLocation);
   $('#geobutton2').click(watchPosition);
@@ -6,6 +9,7 @@ $('document').ready(function(){
 function determineLocation(){
   if (navigator.onLine) {
     if (Modernizr.geolocation) {
+      console.log("log");
       navigator.geolocation.getCurrentPosition(displayOnMap);
     }
     else {
@@ -46,25 +50,32 @@ function displayOnMap(position){
   {
     switch(error.code) {
       case error.TIMEOUT:
-      //faire quelque chose pour la gestion du timeout
-      break;
-      case error.PERMISSION_DENIED:
-      alert(error.message);
-      break;
-    }
-  }
-
-  function watchPosition()
-  {
-    if (navigator.onLine) {
-      if (Modernizr.geolocation) {
-        /* {maximumAge:60000, timeout:2000} */
-        var watchId = navigator.geolocation.watchPosition(displayOnMap,errorFunction);
-        $('#geobutton3').click(function(){
-          navigator.geolocation.clearWatch(watchId);
-        });
+        //faire quelque chose pour la gestion du timeout
+        console.log('TIMEOUT');
+        break;
+        case error.PERMISSION_DENIED:
+        alert(error.message);
+        break;
+        case error.POSITION_UNAVAILABLE:
+        alert(error.message);
+        break;
+        default:
+        console.log(error.code);
       }
-      else {
+    }
+
+    function watchPosition()
+    {
+      if (navigator.onLine) {
+        if (Modernizr.geolocation) {
+
+          /*  */
+          var watchId = navigator.geolocation.watchPosition(displayOnMap,errorFunction);
+          $('#geobutton3').click(function(){
+            navigator.geolocation.clearWatch(watchId);
+          });
+        }
+        else {
       // geolocation n'est pas supporté
       // Utiliser autre chose (ex : Google Gears ...)
     }

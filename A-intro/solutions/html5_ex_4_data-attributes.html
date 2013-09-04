@@ -29,24 +29,34 @@
     A - non prévues pour partager des infos entre application (usage interne uniquement). Voir RDF, micro-data ...
     B - non prévues pour transmettre des informations de style (css est la pour ça)
     D - utiliser des namespaces pour éviter les collisions
-    */
 
 
-    var car = document.getElementById('car');
-    var pdt = document.getElementById('pdt');
-    var aub = document.getElementById('aub');
-    var cour = document.getElementById('cour');
+    Now that we have a broad understanding of what data attributes are, let's take a look at how they can be used:
 
-    if (car.dataset === undefined) {
-      console.log('dataset non supporté');
-    } else {
-      console.log('dataset supporté');
-      show();
-    }
+    - To store the initial height or opacity of an element which might be required in later JavaScript animation calculations
+    - To store parameters for a Flash movie that’s loaded via JavaScript
+    - To store custom web analytics tagging data as demonstrated by Jason Karns
+    - To store data about the health, ammo, or lives of an element in a JavaScript game
+    - To power accessible JavaScript <video> subtitles as demonstrated by Bruce Lawson
 
-    function show(event){
-      console.log('Prix des Carottes = '+car.dataset.price);
-      console.log('Prix des Pommes de terre = '+pdt.dataset.price);
+*/
+
+
+var car = document.getElementById('car');
+var pdt = document.getElementById('pdt');
+var aub = document.getElementById('aub');
+var cour = document.getElementById('cour');
+
+if (car.dataset === undefined) {
+  console.log('dataset non supporté');
+} else {
+  console.log('dataset supporté');
+  show();
+}
+
+function show(event){
+  console.log('Prix des Carottes = '+car.dataset.price);
+  console.log('Prix des Pommes de terre = '+pdt.dataset.price);
     // Autre méthode pour accéder à la propriété ...
     console.log('Prix des Aubergines = '+aub.getAttribute('data-price'));
     console.log('Prix des Courgettes = '+cour.getAttribute('data-price'));

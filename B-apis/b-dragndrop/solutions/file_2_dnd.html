@@ -41,8 +41,7 @@
       evt.stopPropagation();
       evt.preventDefault();
       // Objet FileList
-      var files = evt.dataTransfer.files; 
-      evt.dataTransfer.effectAllowed = 'link';
+      var files = evt.dataTransfer.files;
 
       // files est une FileList d'objet File.
       // On en liste quelques propriétés
@@ -60,7 +59,7 @@
       evt.stopPropagation();
       evt.preventDefault();
       // Utilisation de l'effet copy
-      evt.dataTransfer.dropEffect = 'link'; 
+      evt.dataTransfer.dropEffect = 'copy'; 
     }
 
 
