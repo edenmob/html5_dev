@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <title>
+    </title>
+    <style type="text/css">
+    #touchground {
+        border: 5px solid blue;
+        background-color: #ffa;
+        padding: 10px;
+    }
+    #cons:before {
+        content: "Events:";
+        clear: both;
+        display: block;
+    }
+    #cons {
+        border: 1px solid #aaa;
+        padding: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="touchground">clickez ici, touchez ici ...</div>
+    <div id="cons"></div>
+    <script type="text/javascript">
+    
+    // Enregistrer les évènements suivants et testez les
+    //'click', 'mouseover', 'mousedown', 'mouseenter', 'mouseout', 'mouseleave', 'mouseup', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'gesturestart', 'gesturechange', 'gestureend'
+    var events = ['click', 'mouseover', 'mousedown', 'mouseenter', 'mouseout', 'mouseleave', 'mouseup', 'touchstart', 'touchmove', 'touchend', 'touchcancel', 'gesturestart', 'gesturechange', 'gestureend']
+    var touchground = document.getElementById("touchground");
+    var cons = document.getElementById("cons");
+    for(var i=0;i<events.length;i++)
+    {
+        touchground.addEventListener(events[i], onEvent, false);    
+    }    
+    
+    function onEvent(event) {
+        cons.innerHTML = 'Event declenché: ' + event.type + '<br />' + cons.innerHTML;
+    }
+    </script>
+</body>
+
+</html>

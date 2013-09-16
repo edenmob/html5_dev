@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Battery Status API - Example</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <div id="stats">
+    Votre batterie est actuellement : <span id="charging"></span>.<br />
+    La batterie sera chargée dans : <span id="chargingtime"></span> seconds.<br />
+    La batterie sera déchargée dans : <span id="dischargingtime"></span> seconds.<br />
+    Le niveau de batterie est  <span id="level"></span>%.
+</div>
+
+<script>
+window.addEventListener("load", function() {
+    // Doc : http://www.w3.org/TR/battery-status/
+
+    // Récupération de l'objet battery
+    var battery = navigator.battery || navigator.mozBattery;
+
+
+    // L'api est disponible ?
+
+    if (battery) {        
+        displayBatteryStats();
+        // TODO : enregistrer les évènements suivants
+        // 1. chargingchange
+        // 2. chargingtimechange
+        // 3. dischargingtimechange
+        // 4. levelchange
+    } else {
+        document.getElementById("stats").textContent = "Battery Status API non supporté";
+    }
+
+    function displayBatteryStats() {
+        // TODO : afficher les informations suivantes
+        // 1. est-ce que la batterie charge ?
+        // 2. le temps de chargement restant
+        // 3. le temps de déchargement restant
+        // 4. le niveau de batterie
+    }
+
+}, false);
+</script>
+</body>
+</html>
